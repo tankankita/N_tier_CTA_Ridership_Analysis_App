@@ -81,25 +81,17 @@ namespace DataAccessTier
     ///
     public object ExecuteScalarQuery(string sql)
     {
-            object result;
+      SqlConnection db = new SqlConnection(_DBConnectionInfo);
 
-            SqlConnection db = new SqlConnection(_DBConnectionInfo);
-            db.Open();
-
-            try
-            {
-                SqlCommand cmd;
-                cmd = new SqlCommand();
-                cmd.Connection = db;
-                cmd.CommandText = sql;
-                result = cmd.ExecuteScalar();
-
-                // 
-                // TODO!
-                //
-
-            }
-            catch
+      try
+      {
+      
+        // 
+        // TODO!
+        //
+        
+      }
+      catch
       {
         throw;  // if we get an exception, re-throw:
       }
@@ -109,7 +101,7 @@ namespace DataAccessTier
           db.Close();
       }
       
-      return result;
+      return null;
     }
 
     ///
@@ -123,18 +115,14 @@ namespace DataAccessTier
     public DataSet ExecuteNonScalarQuery(string sql)
     {
       SqlConnection db = new SqlConnection(_DBConnectionInfo);
-            DataSet ds;
+
       try
       {
-
-                SqlCommand cmd = new SqlCommand();
-                cmd.Connection = db;
-                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-                ds = new DataSet();
-                cmd.CommandText = sql;
-                adapter.Fill(ds);
-                
-            
+      
+        // 
+        // TODO!
+        //
+        
       }
       catch
       {
@@ -146,7 +134,7 @@ namespace DataAccessTier
           db.Close();
       }
       
-      return ds;
+      return null;
     }
 
     ///
@@ -160,18 +148,15 @@ namespace DataAccessTier
     public int ExecuteActionQuery(string sql)
     {
       SqlConnection db = new SqlConnection(_DBConnectionInfo);
-            DataSet ds;
 
-            try
-            {
-                SqlCommand cmd = new SqlCommand();
-                cmd.Connection = db;
-                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-                ds = new DataSet();
-                cmd.CommandText = sql;
-                adapter.Fill(ds);
-
-            }
+      try
+      {
+      
+        // 
+        // TODO!
+        //
+        
+      }
       catch
       {
         throw;  // if we get an exception, re-throw:
